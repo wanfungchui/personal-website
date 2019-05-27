@@ -8,9 +8,17 @@
       {{ content }}
     </div>
 
-    <div class="my-6">
-      {% include projects.html %}
-    </div>
+    {% if site.about %}
+      <div class="my-6">
+        {% include about.html %}
+      </div>
+    {% endif %}
+
+    {% if site.projects %}
+      <div class="my-6">
+        {% include projects.html %}
+      </div>
+    {% endif %}
 
     {% if site.topics %}
       <div class="my-6">
@@ -38,7 +46,13 @@
           </div>
         {% endunless %}
 
-        {% include projects.html %}
+        {% if site.about %}
+          {% include about.html %}
+        {% endif %}
+
+        {% if site.projects %}
+          {% include projects.html %}
+        {% endif %}
 
         {% if site.topics %}
           {% include interests.html %}
